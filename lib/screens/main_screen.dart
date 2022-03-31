@@ -132,17 +132,17 @@ class _MainScreenState extends State<MainScreen> {
                         ],
                       ),
                     ),
-                    TextButton(onPressed: () async{
-                      int i = await DatabaseHelper.instance.insert({
-                        DatabaseHelper.columnCityName : locationWeather.name,
-                        // DatabaseHelper.columnTemp:locationWeather.main.temp,
-                        // DatabaseHelper.columnTempMin : locationWeather.main.tempMin,
-                        // DatabaseHelper.columnTempMax : locationWeather.main.tempMax,
-                        // DatabaseHelper.columnHumidity : locationWeather.main.humidity,
-                        // DatabaseHelper.columnRain:locationWeather.clouds.all
-                      });
-
-                    }, child: Text("test button")),
+                    // TextButton(onPressed: () async{
+                    //   int i = await DatabaseHelper.instance.insert({
+                    //     DatabaseHelper.columnCityName : locationWeather.name,
+                    //     // DatabaseHelper.columnTemp:locationWeather.main.temp,
+                    //     // DatabaseHelper.columnTempMin : locationWeather.main.tempMin,
+                    //     // DatabaseHelper.columnTempMax : locationWeather.main.tempMax,
+                    //     // DatabaseHelper.columnHumidity : locationWeather.main.humidity,
+                    //     // DatabaseHelper.columnRain:locationWeather.clouds.all
+                    //   });
+                    //
+                    // }, child: Text("test button")),
                     SingleChildScrollView(
                       scrollDirection: Axis.horizontal,
                       child: Container(
