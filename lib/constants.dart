@@ -2,7 +2,7 @@
 
 import 'dart:ui';
 
-const defaultPadding = 20.0;
+const defaultPadding = 30.0;
 
 const primaryColor = Color(0xFF48c4f7);
 const secondaryColor = Color(0xFF42b1dc);
