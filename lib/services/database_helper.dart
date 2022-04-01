@@ -29,17 +29,17 @@ class DatabaseHelper {
   DatabaseHelper._internal();
 
 
-  late Database _database;
+  Database? _database;
 
   Future<Database> get database async {
-    if (_database != null) return _database;
+    if (_database != null) return _database!;
     // lazily instantiate the db the first time it is accessed
-    _database = await _initDatabase();
-    return _database;
+    _database = await initDatabase();
+    return _database!;
   }
 
   // this opens the database (and creates it if it doesn't exist)
-  _initDatabase() async {
+  initDatabase() async {
     Directory documentsDirectory = await getApplicationDocumentsDirectory();
     String path = join(documentsDirectory.path, "weather.db");
     return await openDatabase(path, version: 1, onCreate: _onCreate);
@@ -52,10 +52,10 @@ class DatabaseHelper {
             $columnId INTEGER PRIMARY KEY,
             $columnCityName TEXT NOT NULL,
             $columnTemp TEXT NOT NULL,
-            $columnTempMax TEXT NOT NULL
-            $columnHumidity TEXT NOT NULL
-            $columnRain TEXT NOT NULL
-          )
+            $columnTempMax TEXT NOT NULL,
+            $columnTempMin TEXT NOT NULL,
+            $columnHumidity TEXT NOT NULL,
+            $columnRain TEXT NOT NULL);
           ''');
   }
 
